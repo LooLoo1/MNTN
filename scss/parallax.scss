@@ -1,0 +1,123 @@
+.wrapper {
+	min-height: 100%;
+}
+.parallax {
+	min-height: 100vh;
+	&__body {
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+	}
+
+	&__container { 
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		height: 100%;
+		pointer-events: none;
+		padding: 64px 80px;
+		z-index: 2;
+		& > * {
+			pointer-events: painted;
+		}
+	}
+
+	&__images {
+		position: absolute;
+		width: 120%;
+		height: 120%;
+		top: -10%;
+		left: -10%;
+		z-index: 1;
+	}
+}
+.images-parallax {
+	&__item {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+	}
+
+	&__clouds,
+	&__mountains,
+	&__human,
+	&__time-shadow {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		// pointer-events: none;
+		// transition: all 0.5s ease-in;
+	}
+
+	&__clouds {
+		background: url("../img/bg-images/clouds.jpg") top / cover no-repeat;
+		top: -30%;
+	}
+
+	&__mountains {
+		background: url("../img/bg-images/mountains.png") top / cover no-repeat;
+		top: 25%;
+		z-index: 2;
+	}
+
+	&__time-shadow {
+		opacity: 0.75;
+		transform: scale(1.5);
+		background: linear-gradient(330deg, transparent 31%, var(--BG) 109%);
+		// &-two {
+		// opacity: 0.5;
+		// }
+	}
+
+	&__human {
+		background: url("../img/bg-images/human.png") top / cover no-repeat;
+		top: 55%;
+		z-index: 3;
+		// transition: all 0.2s linear;
+	}
+	@media (max-aspect-ratio: 3/2) {
+		&__human {
+			background-position: 20% top;
+		}
+	}
+}
+.content {
+	--shadow-size: 430px;
+	margin-top: 30%;
+	// display: flex;
+	// flex-direction: column;
+	position: relative;
+	background-color: var(--BG);
+	z-index: 2;
+	padding-bottom: 120px;
+	// & > *:not(:last-child) {
+	// 	padding-bottom: 200px;
+	// }
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		// height: 300px;
+		height: var(--shadow-size);
+		// height: 700px;
+		pointer-events: none;
+		transform: translate(0, -99%);
+		background: linear-gradient(180deg, transparent 0%, var(--BG) 95%);
+	}
+	main {
+		transform: translateY(calc(var(--shadow-size) / 2.3 * -1));
+	}
+	// &__conteiner {
+	// 	& > *:not(:last-child) {
+	// 		margin-bottom: 200px;
+	// 	}
+	// }
+}
