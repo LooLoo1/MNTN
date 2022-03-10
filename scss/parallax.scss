@@ -11,7 +11,7 @@
 		left: 0;
 	}
 
-	&__container { 
+	&__container {
 		position: relative;
 		display: flex;
 		flex-direction: column;
@@ -56,12 +56,12 @@
 	}
 
 	&__clouds {
-		background: url("../img/bg-images/clouds.jpg") top / cover no-repeat;
+		background: url("../img/bg-images/clouds-min.jpg") top / cover no-repeat;
 		top: -30%;
 	}
 
 	&__mountains {
-		background: url("../img/bg-images/mountains.png") top / cover no-repeat;
+		background: url("../img/bg-images/mountains-min.png") top / cover no-repeat;
 		top: 25%;
 		z-index: 2;
 	}
@@ -76,7 +76,7 @@
 	}
 
 	&__human {
-		background: url("../img/bg-images/human.png") top / cover no-repeat;
+		background: url("../img/bg-images/human-min.png") top / cover no-repeat;
 		top: 55%;
 		z-index: 3;
 		// transition: all 0.2s linear;
